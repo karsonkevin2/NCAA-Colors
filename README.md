@@ -6,11 +6,15 @@ This file has data for all NCAA Division 1 teams. The information was compiled s
 
 Colors are presented using the 8 bit RBG color scheme defined from 0-255. Each teams primary/secondary and accent colors are included as both RGB values and with colored boxes generated using VBA.
 
-Towards the right on the second sheet are input fields. You can put in colors for a real or made up team. For example, input data for your highschool. Then you can sort the `Min` column to find the most similar college teams. The similarity metric used is presented in the whitepaper here, https://www.compuphase.com/cmetric.htm
+Towards the right in the `NCAA v2` sheet are input fields. You can put in colors for a real or made up team. For example, input data for your highschool. Then you can sort the `Min` column to find the most similar college teams. The similarity metric used is presented in the whitepaper here, https://www.compuphase.com/cmetric.htm
+
+Colors similar to Iowa
 
 ![Similar to Iowa](/Iowa.png)
 
-The colorref sheet presents counts of colors grouped together. This uses a naive approach of fixed boundaries. This approach works well for computer vision, but human eyes do not work in the same manner. Some colors which may be similar to a human eye may seem different to a computer and vice-versa.
+The `colorRef` sheet presents counts of colors grouped together. This uses a naive approach of fixed boundaries. This approach works well for computer vision, but human eyes do not work in the same manner. Some colors which may be similar to a human eye may seem different to a computer and vice-versa.
+
+Naive Color Grouping
 
 ![Naive color grouping](/colorref.png)
 
@@ -23,7 +27,11 @@ With this data, run the file. The document was primarily for development and tes
 
 Figure 1 shows all of the primary and secondary colors and clustered colors using the human vision algorithm. Figure 2 shows the same data but with clustered data from the computer vision algorithm. Figure 3 shows how many data points belong to each clustered point. Figure 4 shows a pie chart of how common each color is. Figure 5 shows why equidistant color points will not work well for binning. Figure 6 shows the colors without any overlay.
 
+Figure 1
+
 ![Figure 1](/fig1.png)
+
+Figure 4
 
 ![Figure 4](/fig4.png)
 
