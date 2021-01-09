@@ -2,9 +2,11 @@ close all
 
 %0.2989, 0.5870, 0.1140
 
-A = aPrimary;
-A = aSecondary;
+%A = aPrimary;
+%A = aSecondary;
 A = [aPrimary ; aSecondary];
+
+clusterP = 27;
 
 B = [aPrimary , aSecondary];
 [a,b] = kmeans(B,50);
@@ -16,7 +18,7 @@ end
 
 Ak = A/255;
 Ak = [Ak(:,1)*0.2989,Ak(:,2)*0.5870,Ak(:,3)*0.1140];
-[idxk, Ck] = kmeans(Ak,27);
+[idxk, Ck] = kmeans(Ak,clusterP);
 Ck = [Ck(:,1)/0.2989,Ck(:,2)/0.5870,Ck(:,3)/0.1140];
 idxCk = zeros(length(idxk),3);
 for i=1:length(idxk)
@@ -35,7 +37,7 @@ set(gcf, 'color', [1 1 1])
 set(gca, 'color', [1 1 1])
 
 %Copy data to A
-[idx, C] = kmeans(A,27);
+[idx, C] = kmeans(A,clusterP);
 %%%%%
 Cv2 = rescale(C);
 
